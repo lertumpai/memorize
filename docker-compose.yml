@@ -11,7 +11,7 @@ services:
   memorize_backend:
     image: lertumpai/memorize-backend
     env_file:
-      - environment/production/.backend
+      - environment/production/backend
     command: npm run start
     depends_on:
       - mongo
@@ -20,7 +20,7 @@ services:
   memorize_frontend:
     image: lertumpai/memorize-frontend
     env_file:
-      - environment/production/.frontend
+      - environment/production/frontend
     command: npm run start
     depends_on:
       - memorize_backend
