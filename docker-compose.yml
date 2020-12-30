@@ -1,0 +1,33 @@
+version: "3.1"
+services:
+  mongo:
+    image: mongo
+    restart: always
+    container_name: memorize_mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - database-data:/data/mongo/
+  memorize_backend:
+    image: lertumpai/memorize-backend
+    env_file:
+      - environment/.backend
+    command: npm run start
+    depends_on:
+      - mongo
+    ports:
+      - 5000:5000
+  memorize_frontend:
+    image: lertumpai/memorize-frontend
+    env_file:
+      - environment/.frontend
+    command: npm run start
+    depends_on:
+      - memorize_backend
+    ports:
+      - 3000:3000
+
+volumes:
+  database-data:
+    driver: local
