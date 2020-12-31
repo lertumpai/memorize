@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.7"
 services:
   mongo:
     image: mongo
@@ -11,7 +11,7 @@ services:
   memorize_backend:
     image: lertumpai/memorize-backend
     env_file:
-      - environment/development/backend
+      - environment/production/backend
     command: npm run start
     depends_on:
       - mongo
@@ -19,8 +19,6 @@ services:
       - 5000:5000
   memorize_frontend:
     image: lertumpai/memorize-frontend
-    env_file:
-      - environment/development/frontend
     command: npm run start
     depends_on:
       - memorize_backend
