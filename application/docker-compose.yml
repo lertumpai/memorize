@@ -5,8 +5,6 @@ services:
     env_file:
       - environment/production/backend
     command: npm run start
-    depends_on:
-      - mongo
     ports:
       - 5000:5000
   memorize_frontend:
