@@ -1,5 +1,13 @@
 version: "3.7"
 services:
+  mongo:
+    image: mongo
+    restart: always
+    container_name: memorize_mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - database_data:/data/mongo/
   memorize_upload:
     image: lertumpai/memorize-upload
     restart: always
@@ -12,4 +20,6 @@ services:
 
 volumes:
   upload_data:
+    driver: local
+  database_data:
     driver: local

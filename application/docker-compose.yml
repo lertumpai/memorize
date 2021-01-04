@@ -1,13 +1,5 @@
 version: "3.7"
 services:
-  mongo:
-    image: mongo
-    restart: always
-    container_name: memorize_mongodb
-    ports:
-      - 27017:27017
-    volumes:
-      - database-data:/data/mongo/
   memorize_backend:
     image: lertumpai/memorize-backend
     env_file:
@@ -24,7 +16,3 @@ services:
       - memorize_backend
     ports:
       - 3000:3000
-
-volumes:
-  database-data:
-    driver: local
