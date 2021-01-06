@@ -9,6 +9,8 @@ services:
       - 5000:5000
   memorize_frontend:
     image: lertumpai/memorize-frontend
+    env_file:
+      - environment/production/frontend
     command: npm run start
     depends_on:
       - memorize_backend
