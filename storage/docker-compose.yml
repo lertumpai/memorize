@@ -7,7 +7,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - database_data:/data/memorize_mongodb/
+      - mongo_data:/data/memorize_mongodb/
   memorize_upload:
     image: lertumpai/memorize-upload
     restart: always
@@ -19,7 +19,7 @@ services:
     ports:
       - 4000:4000
     volumes:
-      - upload_data:/data/memorize_uploads/
+      - memorize_upload:/data/memorize_uploads/
 
 volumes:
   upload_data:
