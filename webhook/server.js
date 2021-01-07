@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const shell = require('shelljs')
+const compose = require('docker-compose')
 
 const app = express()
 
@@ -16,14 +16,14 @@ app.get('/test', (req, res) => {
 })
 
 app.post('/backend', async (req, res) => {
-  await shell.chmod('755', './scripts/backend.sh')
-  shell.exec('./scripts/backend.sh')
+  await compose.down({ cwd: './application/backend', commandOptions: ['--rmi', 'all'], log: true })
+  await compose.upAll({ cwd: './application/backend', log: true })
   res.send({ message: 'backend updated' })
 })
 
 app.post('/frontend', async (req, res) => {
-  await shell.chmod('755', './scripts/frontend.sh')
-  shell.exec('./scripts/frontend.sh')
+  await compose.down({ cwd: './application/frontend', commandOptions: ['--rmi', 'all'], log: true })
+  await compose.upAll({ cwd: './application/frontend', log: true })
   res.send({ message: 'frontend updated' })
 })
 
