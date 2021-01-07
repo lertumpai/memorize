@@ -17,8 +17,10 @@ docker-compose up -d
 docker-compose down
 2. Delete all containers using the following command:
 docker rm -f $(docker ps -a -q)
-3. Delete all volumes using the following command:
+3.1 Delete all volumes using the following command:
 docker volume rm $(docker volume ls -q)
+3.2 Delete all volumes that are not used
+docker volume prune
 4. Restart the containers using the following command:
 docker-compose up -d
 ```
