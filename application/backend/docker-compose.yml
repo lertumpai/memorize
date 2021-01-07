@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  memorize_backend:
+    container_name: memorize_backend
+    image: lertumpai/memorize-backend
+    env_file:
+      - env
+    command: npm run start
+    ports:
+      - 5000:5000
