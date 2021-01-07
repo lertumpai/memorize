@@ -24,3 +24,11 @@ docker volume prune
 4. Restart the containers using the following command:
 docker-compose up -d
 ```
+
+# download data from ssh
+```
+=== Single file ===
+scp root@203.154.83.249:path ~/Desktop
+=== directory ===
+scp -r root@203.154.83.249:path ~/Desktop
+```
