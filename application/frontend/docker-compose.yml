@@ -8,13 +8,3 @@ services:
     command: npm run start
     ports:
       - 3000:3000
-    labels:
-      - "com.centurylinklabs.watchtower.scope=myscope"
-
-  watchtower:
-    image: containrrr/watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 30 --scope myscope
-    labels:
-      - "com.centurylinklabs.watchtower.scope=myscope"

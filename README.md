@@ -32,3 +32,14 @@ scp root@203.154.83.249:path ~/Desktop
 === directory ===
 scp -r root@203.154.83.249:path ~/Desktop
 ```
+
+# Docker watchtower
+```
+docker run -d \
+  --name watchtower \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  v2tec/watchtower \
+  --interval 30 --cleanup \
+  memorize_frontend
+  memorize_backend
+```
