@@ -43,3 +43,19 @@ docker run -d \
   memorize_frontend \
   memorize_backend
 ```
+
+# Deploy step
+```
+1. pull docker watcher
+docker pull v2tec/watchtower
+run follow 'Docker watchtower'
+
+2. start storage
+pwd: /storage -> docker-compose up
+
+3. start backend
+pwd: /application/backend -> docker-compose up
+
+2. start frontend
+pwd: /application/frontend -> docker-compose up
+```
