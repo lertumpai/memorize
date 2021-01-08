@@ -40,6 +40,6 @@ docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
   v2tec/watchtower \
   --interval 30 --cleanup \
-  memorize_frontend
+  memorize_frontend \
   memorize_backend
 ```
