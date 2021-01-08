@@ -12,6 +12,7 @@ app.use(
 )
 
 app.get('/test', (req, res) => {
+  console.log('test')
   res.send({ message: 'hook run bash script', url: process.env.SERVER_URL || 'localhost:3000'  })
 })
 
