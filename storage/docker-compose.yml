@@ -13,7 +13,7 @@ services:
     restart: always
     container_name: memorize_upload
     environment:
-      - SERVER_URL=203.154.83.249:4000
+      - SERVER_URL=35.187.254.42:4000
       - TIME_OUT=300000
     command: npm run start
     ports:
