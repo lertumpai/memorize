@@ -29,6 +29,7 @@ docker-compose up -d
 ```
 === Single file ===
 scp root@203.154.83.249:path ~/Desktop
+docker cp memorize_upload:/usr/src/memorize-upload/public .
 === directory ===
 scp -r root@203.154.83.249:path ~/Desktop
 ```
