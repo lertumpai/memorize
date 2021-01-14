@@ -63,6 +63,6 @@ pwd: /application/frontend -> docker-compose up
 
 # mongo backup
 ```
-mongodump --host 203.154.83.249 --port 27017 --db memorize --forceTableScan
-mongorestore
+mongodump --host 35.187.254.42 --port 27017 -u lertumpai -p sorawit5171718 --db memorize --forceTableScan
+mongorestore -u lertumpai -p sorawit5171718
 ```
