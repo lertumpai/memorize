@@ -60,3 +60,9 @@ pwd: /application/backend -> docker-compose up
 2. start frontend
 pwd: /application/frontend -> docker-compose up
 ```
+
+# mongo backup
+```
+mongodump --host 203.154.83.249 --port 27017 --db memorize --forceTableScan
+mongorestore
+```
