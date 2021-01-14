@@ -4,9 +4,14 @@ services:
     image: mongo
     restart: always
     container_name: memorize_mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: lertumpai
+      MONGO_INITDB_ROOT_PASSWORD: sorawit5171718
+      MONGO_INITDB_DATABASE: memorize
     ports:
       - 27017:27017
     volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - mongo_data:/data/memorize_mongodb/
   memorize_upload:
     image: lertumpai/memorize-upload
