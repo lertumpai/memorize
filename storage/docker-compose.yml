@@ -5,9 +5,9 @@ services:
     restart: always
     container_name: memorize_mongodb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: lertumpai
-      MONGO_INITDB_ROOT_PASSWORD: sorawit5171718
-      MONGO_INITDB_DATABASE: memorize
+      MONGO_INITDB_ROOT_USERNAME:
+      MONGO_INITDB_ROOT_PASSWORD:
+      MONGO_INITDB_DATABASE:
     ports:
       - 27017:27017
     volumes:
