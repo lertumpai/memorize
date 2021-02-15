@@ -23,11 +23,7 @@ services:
     command: npm run start
     ports:
       - 4000:4000
-    volumes:
-      - memorize_upload:/data/memorize_uploads/
 
 volumes:
-  memorize_upload:
-    driver: local
   mongo_data:
     driver: local
