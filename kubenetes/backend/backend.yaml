@@ -19,22 +19,37 @@ spec:
           image: lertumpai/memorize-backend
           env:
             - name: NODE_ENV
-              value: "production"
+              valueFrom:
+                configMapKeyRef:
+                  name: memorize-backend-configmap
+                  key: NODE_ENV
             - name: PRIVATE_KEY
-              value: "n@e#w$f%a^r&m*m(e)m_o+r1i2z3e4567890"
+              valueFrom:
+                configMapKeyRef:
+                  name: memorize-backend-configmap
+                  key: PRIVATE_KEY
             - name: PRIVATE_HASH_KEY
-              value: "$2b$10$OCSYVJ2HwOQ5iDA/U7ZjreK3OEdUzoCclByN0MPOkxy9UwPrJSW8m"
+              valueFrom:
+                configMapKeyRef:
+                  name: memorize-backend-configmap
+                  key: PRIVATE_HASH_KEY
             - name: MONGO_URI
-              value: "mongodb://lertumpai:sorawit5171718@192.168.1.106:27017/memorize"
+              valueFrom:
+                configMapKeyRef:
+                  name: memorize-backend-configmap
+                  key: MONGO_URI
             - name: SERVER_UPLOAD_URL
-              value: "http://192.168.1.106:4000"
+              valueFrom:
+                configMapKeyRef:
+                  name: memorize-backend-configmap
+                  key: SERVER_UPLOAD_URL
           ports:
             - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: memorize-backend-service
 spec:
   type: NodePort
   selector:
@@ -43,3 +58,4 @@ spec:
     - protocol: TCP
       port: 5001
       targetPort: 5000
+      nodePort: 30000
