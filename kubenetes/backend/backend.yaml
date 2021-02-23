@@ -51,11 +51,10 @@ kind: Service
 metadata:
   name: memorize-backend-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: memorize-backend
   ports:
     - protocol: TCP
-      port: 5001
+      port: 5000 # expose port
       targetPort: 5000
-      nodePort: 30000
