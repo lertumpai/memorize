@@ -17,32 +17,9 @@ spec:
       containers:
         - name: memorize-backend
           image: lertumpai/memorize-backend
-          env:
-            - name: NODE_ENV
-              valueFrom:
-                configMapKeyRef:
-                  name: memorize-backend-configmap
-                  key: NODE_ENV
-            - name: PRIVATE_KEY
-              valueFrom:
-                configMapKeyRef:
-                  name: memorize-backend-configmap
-                  key: PRIVATE_KEY
-            - name: PRIVATE_HASH_KEY
-              valueFrom:
-                configMapKeyRef:
-                  name: memorize-backend-configmap
-                  key: PRIVATE_HASH_KEY
-            - name: MONGO_URI
-              valueFrom:
-                configMapKeyRef:
-                  name: memorize-backend-configmap
-                  key: MONGO_URI
-            - name: SERVER_UPLOAD_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: memorize-backend-configmap
-                  key: SERVER_UPLOAD_URL
+          envFrom:
+            - configMapRef:
+                name: memorize-backend-configmap
           ports:
             - containerPort: 80
 ---
@@ -57,4 +34,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80 # expose port
-      targetPort: 80
+      targetPort: 5000
