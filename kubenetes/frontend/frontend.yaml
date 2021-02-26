@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: memorize-frontend
+  labels:
+    app: memorize-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: memorize-frontend
+  template:
+    metadata:
+      labels:
+        app: memorize-frontend
+    spec:
+      containers:
+        - name: memorize-frontend
+          image: lertumpai/memorize-frontend
+          envFrom:
+            - configMapRef:
+                name: memorize-frontend-configmap
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: memorize-frontend-service
+spec:
+  type: ClusterIP
+  selector:
+    app: memorize-frontend
+  ports:
+    - protocol: TCP
+      port: 80 # expose port
+      targetPort: 80
