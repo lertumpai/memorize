@@ -8,4 +8,5 @@ data:
   PRIVATE_HASH_KEY: $2b$10$OCSYVJ2HwOQ5iDA/U7ZjreK3OEdUzoCclByN0MPOkxy9UwPrJSW8m
   MONGO_URI: mongodb://lertumpai:sorawit5171718@34.126.83.31:27017/memorize
   SERVER_UPLOAD_URL: http://34.126.83.31:4000
-  REDIS_URI: redis://redis-service:6379
+  REDIS_HOST: redis://memorize-redis-service
+  REDIS_PORT: 6379
