@@ -66,3 +66,9 @@ pwd: /application/frontend -> docker-compose up
 mongodump --host 35.187.254.42 --port 27017 -u lertumpai -p sorawit5171718 --db memorize --forceTableScan
 mongorestore -u lertumpai -p sorawit5171718
 ```
+
+# k8s rolling update
+```
+kubectl set image deployment/memorize-frontend memorize-frontend=lertumpai/memorize-frontend:1.0.7 --record
+kubectl set image deployment/memorize-backend memorize-backend=lertumpai/memorize-backend:1.0.5 --record
+```
