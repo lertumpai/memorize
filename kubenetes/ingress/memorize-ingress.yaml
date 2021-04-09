@@ -21,6 +21,10 @@ spec:
             backend:
               serviceName: memorize-backend-service
               servicePort: 5000
+          - path: /upload/(.*)
+            backend:
+              serviceName: memorize-upload-service
+              servicePort: 4000
           - path: /(.*)
             backend:
               serviceName: memorize-frontend-service
