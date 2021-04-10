@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: memorize-frontend
-          image: lertumpai/memorize-frontend
+          image: asia.gcr.io/wide-strength-304907/memorize-frontend
           envFrom:
             - configMapRef:
                 name: memorize-frontend-configmap
