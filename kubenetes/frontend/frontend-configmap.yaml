@@ -7,7 +7,6 @@ data:
   SERVER_URL: https://memorize-nf.com
   SERVER_URL_PATH: /backend/graphql
   LOCAL_STORAGE_KEY: current_user
-  SERVER_UPLOAD_IMAGE_URL: https://memorize-nf.com/upload/upload
-  SERVER_URL_IMAGE: https://memorize-nf.com/upload
-  SERVER_UPLOAD_IMAGE_URL_PROFILE_PATH: /profile
-  SERVER_UPLOAD_IMAGE_URL_ARTICLE_PATH: /article
+  SERVER_UPLOAD_IMAGE_PATH: /upload/upload
+  SERVER_UPLOAD_IMAGE_PATH_PROFILE: profiles
+  SERVER_UPLOAD_IMAGE_PATH_ARTICLE: articles
