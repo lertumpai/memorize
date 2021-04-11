@@ -17,6 +17,9 @@ spec:
       containers:
         - name: memorize-upload
           image: lertumpai/memorize-upload
+          envFrom:
+            - configMapRef:
+                name: memorize-upload-configmap
           ports:
             - containerPort: 4000
 ---
