@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: memorize-upload
-          image: lertumpai/memorize-upload
+          image: asia.gcr.io/wide-strength-304907/memorize-upload
           envFrom:
             - configMapRef:
                 name: memorize-upload-configmap
