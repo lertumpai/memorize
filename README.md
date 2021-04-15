@@ -72,3 +72,8 @@ mongorestore -u lertumpai -p sorawit5171718
 kubectl set image deployment/memorize-frontend memorize-frontend=lertumpai/memorize-frontend:1.0.7 --record
 kubectl set image deployment/memorize-backend memorize-backend=lertumpai/memorize-backend:1.0.5 --record
 ```
+
+# setup GCP cloud
+```
+
+```
