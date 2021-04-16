@@ -19,7 +19,7 @@ spec:
           image: asia.gcr.io/wide-strength-304907/memorize-backend
           volumeMounts:
             - name: memorize-key-json
-              mountPath: /usr/src/memorize-backend
+              mountPath: memorize-backend
               readOnly: true
           envFrom:
             - configMapRef:
