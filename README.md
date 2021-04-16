@@ -34,37 +34,10 @@ docker cp memorize_upload:/usr/src/memorize-upload/public .
 scp -r root@203.154.83.249:path ~/Desktop
 ```
 
-# Docker watchtower
-```
-docker run -d \
-  --name watchtower \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  v2tec/watchtower \
-  --interval 30 --cleanup \
-  memorize_frontend \
-  memorize_backend
-```
-
-# Deploy step
-```
-1. pull docker watcher
-docker pull v2tec/watchtower
-run follow 'Docker watchtower'
-
-2. start storage
-pwd: /storage -> docker-compose up
-
-3. start backend
-pwd: /application/backend -> docker-compose up
-
-2. start frontend
-pwd: /application/frontend -> docker-compose up
-```
-
 # mongo backup
 ```
-mongodump --host 35.187.254.42 --port 27017 -u lertumpai -p sorawit5171718 --db memorize --forceTableScan
-mongorestore -u lertumpai -p sorawit5171718
+mongodump --uri mongodb://localhost:27017/memorize/memorize
+mongorestore --uri mongodb://localhost:27017/memorize/memorize
 ```
 
 # k8s rolling update
@@ -75,10 +48,11 @@ kubectl set image deployment/memorize-backend memorize-backend=lertumpai/memoriz
 
 # setup memorize project in GCP cloud
 ```
-1. create bucket
-2. create k8s cluster
-3. install
+1. create bucket storage and migrate data
+2. create mongodb instance and migrate data
+3. create k8s cluster
+4. install
     - cert-manager -> https://cert-manager.io/docs/installation/kubernetes/
     - nginx -> https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
-4. apply k8s yaml
+5. apply k8s yaml
 ```
