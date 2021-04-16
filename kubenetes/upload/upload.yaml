@@ -17,11 +17,19 @@ spec:
       containers:
         - name: memorize-upload
           image: asia.gcr.io/wide-strength-304907/memorize-upload
+          volumeMounts:
+              - name: memorize-key-json
+                mountPath: /gsa
+                readOnly: true
           envFrom:
             - configMapRef:
                 name: memorize-upload-configmap
           ports:
             - containerPort: 4000
+      volumes:
+        - name: memorize-key-json
+          secret:
+            secretName: memorize-key-json-secret
 ---
 apiVersion: v1
 kind: Service
