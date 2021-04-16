@@ -10,3 +10,4 @@ data:
   REDIS_HOST: memorize-redis-service
   REDIS_PORT: "6379"
   BUCKET_NAME: memorize-bucket
+  KEY_JSON_PATH: key.json

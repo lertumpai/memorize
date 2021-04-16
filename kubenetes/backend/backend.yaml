@@ -17,11 +17,19 @@ spec:
       containers:
         - name: memorize-backend
           image: asia.gcr.io/wide-strength-304907/memorize-backend
+          volumeMounts:
+            - name: memorize-key-json
+              mountPath: /usr/src/memorize-backend
+              readOnly: true
           envFrom:
             - configMapRef:
                 name: memorize-backend-configmap
           ports:
             - containerPort: 5000
+      volumes:
+        - name: memorize-key-json
+          secret:
+            secretName: memorize-key-json-secret
 ---
 apiVersion: v1
 kind: Service
