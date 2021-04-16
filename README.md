@@ -73,7 +73,12 @@ kubectl set image deployment/memorize-frontend memorize-frontend=lertumpai/memor
 kubectl set image deployment/memorize-backend memorize-backend=lertumpai/memorize-backend:1.0.5 --record
 ```
 
-# setup GCP cloud
+# setup memorize project in GCP cloud
 ```
-
+1. create bucket
+2. create k8s cluster
+3. install
+    - cert-manager -> https://cert-manager.io/docs/installation/kubernetes/
+    - nginx -> https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
+4. apply k8s yaml
 ```
