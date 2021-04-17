@@ -48,7 +48,6 @@ kubectl set image deployment/memorize-backend memorize-backend=lertumpai/memoriz
 
 ---
 
-
 # setup memorize project in GCP cloud
 
 ## 1. create bucket storage and migrate data
@@ -59,7 +58,7 @@ gsutil -m cp -r "gs://memorize-bucket/articles/" "gs://memorize-bucket/profiles/
 
 ## 2. create mongodb instance and migrate data
 ```
-useing 'mongo backup' part
+using 'mongo backup' part
 ```
 
 ## 3. create k8s cluster via GKE console
