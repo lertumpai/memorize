@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: memorize-backend
-          image: asia.gcr.io/wide-strength-304907/memorize-backend:{MEMORIZE_DOCKER_TAG}
+          image: asia.gcr.io/wide-strength-304907/memorize-backend:${MEMORIZE_DOCKER_TAG}
           volumeMounts:
             - name: memorize-key-json
               mountPath: /gsa
