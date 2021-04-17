@@ -54,7 +54,7 @@ kubectl set image deployment/memorize-backend memorize-backend=lertumpai/memoriz
     - using 'mongo backup'
 3. create k8s cluster
 4. install
-    - cert-manager -> https://cert-manager.io/docs/installation/kubernetes/
     - nginx -> https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
+    - cert-manager -> https://cert-manager.io/docs/installation/kubernetes/
 5. apply k8s yaml
 ```
