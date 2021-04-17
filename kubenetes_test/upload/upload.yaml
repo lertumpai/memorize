@@ -36,6 +36,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: memorize-upload-service
+  namespace: ${MEMORIZE_NAMESPACE}
 spec:
   type: ClusterIP
   selector:
