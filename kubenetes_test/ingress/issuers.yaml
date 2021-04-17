@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1beta1
 kind: ClusterIssuer
 metadata:
   name: ${MEMORIZE_LET_ENCRYPT}
+  namespace: ${MEMORIZE_NAMESPACE}
 spec:
   acme:
     # The ACME server URL

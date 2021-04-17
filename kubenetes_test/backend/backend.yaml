@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: memorize-backend
+  namespace: ${MEMORIZE_NAMESPACE}
   labels:
     app: memorize-backend
 spec:

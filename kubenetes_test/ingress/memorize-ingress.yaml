@@ -8,6 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     cert-manager.io/cluster-issuer: ${MEMORIZE_LET_ENCRYPT}
   name: nginx
+  namespace: ${MEMORIZE_NAMESPACE}
 spec:
   tls:
     - hosts:
