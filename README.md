@@ -46,15 +46,70 @@ kubectl set image deployment/memorize-frontend memorize-frontend=lertumpai/memor
 kubectl set image deployment/memorize-backend memorize-backend=lertumpai/memorize-backend:1.0.5 --record
 ```
 
+---
+
+
 # setup memorize project in GCP cloud
+
+## 1. create bucket storage and migrate data
+### download file from storage using
 ```
-1. create bucket storage and migrate data
-    - download file from storage using `gsutil -m cp -r "gs://memorize-bucket/articles/" "gs://memorize-bucket/profiles/" .`
-2. create mongodb instance and migrate data
-    - using 'mongo backup'
-3. create k8s cluster
-4. install
-    - nginx -> https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
-    - cert-manager -> https://cert-manager.io/docs/installation/kubernetes/
-5. apply k8s yaml
+gsutil -m cp -r "gs://memorize-bucket/articles/" "gs://memorize-bucket/profiles/" .
+```
+
+## 2. create mongodb instance and migrate data
+```
+useing 'mongo backup' part
+```
+
+## 3. create k8s cluster via GKE console
+
+## 4. install nginx and cert-manager respectively
+### nginx
+```
+https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
+```
+### cert-manager
+```
+https://cert-manager.io/docs/installation/kubernetes/
+```
+
+## 5. apply k8s
+### Apply namespace first
+```
+kubectl apply -f namespace.yaml
+```
+
+### Set namespace to needed namespace
+```
+kubens namespace
+*** change host in memorize-ingress.yaml and image in frontend.yaml ***
+```
+
+### for apply all
+```
+kubectl apply -f key-json-secret.yaml
+kubectl apply -f redis/redis.yaml
+kubectl apply -f backend/backend-configmap.yaml
+kubectl apply -f backend/backend.yaml
+kubectl apply -f frontend/frontend-configmap.yaml
+kubectl apply -f frontend/frontend.yaml
+kubectl apply -f upload/upload-configmap.yaml
+kubectl apply -f upload/upload.yaml
+kubectl apply -f ingress/issuers.yaml
+kubectl apply -f ingress/memorize-ingress.yaml
+```
+
+### for delete all
+```
+kubectl delete -f key-json-secret.yaml
+kubectl delete -f redis/redis.yaml
+kubectl delete -f backend/backend-configmap.yaml
+kubectl delete -f backend/backend.yaml
+kubectl delete -f frontend/frontend-configmap.yaml
+kubectl delete -f frontend/frontend.yaml
+kubectl delete -f upload/upload-configmap.yaml
+kubectl delete -f upload/upload.yaml
+kubectl delete -f ingress/issuers.yaml
+kubectl delete -f ingress/memorize-ingress.yaml
 ```
