@@ -83,7 +83,14 @@ kubectl apply -f namespace.yaml
 ### Set namespace to needed namespace
 ```
 kubens namespace
-*** change host in memorize-ingress.yaml and image in frontend.yaml ***
+```
+
+### before apply k8s yaml do following
+```
+- change cert-manager.io/cluster-issuer, spec.tls.hosts, spec.tls.secretName and spec.rules.host in memorize-ingress.yaml
+- change mongo in backend-configmap.yaml
+- change tag image in frontend.yaml and change server url in frontend-configmap.yaml
+- change privateKeySecretRef and metadata.name in issuers.yaml
 ```
 
 ### for apply all
