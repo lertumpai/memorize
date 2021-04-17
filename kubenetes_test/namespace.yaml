@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ${MEMORIZE_NAMESPACE}
+  labels:
+    name: ${MEMORIZE_NAMESPACE}
