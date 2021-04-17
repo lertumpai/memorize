@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: memorize-upload-configmap
+data:
+  NODE_ENV: production
+  PRIVATE_KEY: n@e#w$f%a^r&m*m(e)m_o+r1i2z3e4567890
+  BUCKET_NAME: memorize-bucket
+  GOOGLE_APPLICATION_CREDENTIALS: /gsa/key.json
