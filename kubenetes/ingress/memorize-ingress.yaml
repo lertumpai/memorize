@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - memorize-nf.com
+        - staging.memorize-nf.com
       secretName: memorize-tls
   rules:
-    - host: memorize-nf.com
+    - host: staging.memorize-nf.com
       http:
         paths:
           - path: /backend/(.*)

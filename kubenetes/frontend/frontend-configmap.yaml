@@ -4,7 +4,8 @@ metadata:
   name: memorize-frontend-configmap
 data:
   NODE_ENV: production
-  SERVER_URL: https://memorize-nf.com
+  SERVER_URL: https://staging.memorize-nf.com
+  SERVER_UPLOAD_URL: https://staging.memorize-nf.com
   SERVER_URL_PATH: /backend/graphql
   LOCAL_STORAGE_KEY: current_user
   SERVER_UPLOAD_IMAGE_PATH: /upload/upload
