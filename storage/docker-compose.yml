@@ -4,27 +4,12 @@ services:
     image: mongo
     restart: always
     container_name: memorize_mongodb
-    environment:
-      MONGO_INITDB_ROOT_USERNAME:
-      MONGO_INITDB_ROOT_PASSWORD:
-      MONGO_INITDB_DATABASE:
+    command: [--auth]
     ports:
       - 27017:27017
     volumes:
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - mongo_data:/data/memorize_mongodb/
-  memorize_upload:
-    image: lertumpai/memorize-upload
-    restart: always
-    container_name: memorize_upload
-    environment:
-      - TIME_OUT=300000
-    command: npm run start
-    ports:
-      - 4000:4000
 
 volumes:
   mongo_data:
-    driver: local
-  redis_data:
     driver: local
