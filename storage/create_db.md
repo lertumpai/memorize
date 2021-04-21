@@ -19,7 +19,8 @@ db.createUser({
 
 # 4. login mongo again with role root
 ```
-mongo -u lertumpai -p sorawit5171718 --authenticationDatabase admin
+docker exec -it [container_name] mongo -u lertumpai -p --authenticationDatabase admin
+mongo -u lertumpai -p --authenticationDatabase admin
 ```
 
 # 5. create DB
