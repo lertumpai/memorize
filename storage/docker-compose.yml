@@ -3,13 +3,9 @@ services:
   mongo:
     image: mongo
     restart: always
-    container_name: memorize_mongodb
+    container_name: memorize_mongodb_test
     command: [--auth]
     ports:
       - 27017:27017
     volumes:
-      - mongo_data:/data/memorize_mongodb/
-
-volumes:
-  mongo_data:
-    driver: local
+      - ~/Desktop/mongo-memorize:/data/db/

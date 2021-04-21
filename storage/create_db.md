@@ -3,7 +3,12 @@
 docker-compose up -d
 ```
 
-# 2. create admin
+# 2. login with admin
+```
+docker exec -it [container_name] mongo admin
+```
+
+# 3. create admin
 ```
 db.createUser({
     user: "lertumpai",
@@ -12,12 +17,12 @@ db.createUser({
 })
 ```
 
-# 3. login mongo again with role root
+# 4. login mongo again with role root
 ```
 mongo -u lertumpai -p sorawit5171718 --authenticationDatabase admin
 ```
 
-# 4. create DB
+# 5. create DB
 ### === create production ===
 ```
 use memorize
