@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: memorize-upload
-          image: asia.gcr.io/wide-strength-304907/memorize-upload:${MEMORIZE_DOCKER_TAG}
+          image: asia.gcr.io/${MEMORIZE_GCP_PROJECT_ID}/memorize-upload:${MEMORIZE_DOCKER_TAG}
           volumeMounts:
               - name: memorize-key-json
                 mountPath: /gsa

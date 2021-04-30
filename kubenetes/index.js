@@ -22,6 +22,7 @@ const env = {
   MEMORIZE_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.87.156.163:27017/memorize',
   MEMORIZE_SECRET_NAME: 'memorize-tls-production',
   MEMORIZE_HOST: 'memorize-nf.com',
+  MEMORIZE_GCP_PROJECT_ID: 'crested-lexicon-312308',
 }
 
 let wrapFile = files.map(file => {

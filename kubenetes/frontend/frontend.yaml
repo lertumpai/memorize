@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: memorize-frontend
-          image: asia.gcr.io/wide-strength-304907/memorize-frontend:${MEMORIZE_DOCKER_TAG}
+          image: asia.gcr.io/${MEMORIZE_GCP_PROJECT_ID}/memorize-frontend:${MEMORIZE_DOCKER_TAG}
           envFrom:
             - configMapRef:
                 name: memorize-frontend-configmap
