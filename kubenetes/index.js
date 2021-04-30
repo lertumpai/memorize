@@ -13,15 +13,15 @@ const files = [
   './ingress/memorize-ingress.yaml',
 ]
 const env = {
-  MEMORIZE_NAMESPACE: 'memorize-staging',
-  MEMORIZE_NODE_ENV: 'staging',
-  MEMORIZE_DOCKER_TAG: 'latest-stg',
-  MEMORIZE_LET_ENCRYPT: 'letencrypt-stg',
-  MEMORIZE_SERVER_URL: 'https://staging.memorize-nf.com',
-  MEMORIZE_SERVER_UPLOAD_URL: 'https://staging.memorize-nf.com',
-  MEMORIZE_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.126.83.31:27017/memorize-staging',
-  MEMORIZE_SECRET_NAME: 'memorize-tls-stg',
-  MEMORIZE_HOST: 'staging.memorize-nf.com',
+  MEMORIZE_NAMESPACE: 'memorize-production',
+  MEMORIZE_NODE_ENV: 'production',
+  MEMORIZE_DOCKER_TAG: 'latest',
+  MEMORIZE_LET_ENCRYPT: 'letencrypt-production',
+  MEMORIZE_SERVER_URL: 'https://memorize-nf.com',
+  MEMORIZE_SERVER_UPLOAD_URL: 'https://memorize-nf.com',
+  MEMORIZE_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.126.83.31:27017/memorize',
+  MEMORIZE_SECRET_NAME: 'memorize-tls-production',
+  MEMORIZE_HOST: 'memorize-nf.com',
 }
 
 let wrapFile = files.map(file => {
