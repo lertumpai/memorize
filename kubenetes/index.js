@@ -19,7 +19,7 @@ const env = {
   MEMORIZE_LET_ENCRYPT: 'letencrypt-production',
   MEMORIZE_SERVER_URL: 'https://memorize-nf.com',
   MEMORIZE_SERVER_UPLOAD_URL: 'https://memorize-nf.com',
-  MEMORIZE_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.126.83.31:27017/memorize',
+  MEMORIZE_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.87.156.163:27017/memorize',
   MEMORIZE_SECRET_NAME: 'memorize-tls-production',
   MEMORIZE_HOST: 'memorize-nf.com',
 }

@@ -5,7 +5,7 @@ docker-compose up -d
 
 # 2. login with admin
 ```
-docker exec -it [container_name] mongo admin
+docker exec -it memorize_mongodb mongo admin
 ```
 
 # 3. create admin
@@ -19,7 +19,7 @@ db.createUser({
 
 # 4. login mongo again with role root
 ```
-docker exec -it [container_name] mongo -u lertumpai -p --authenticationDatabase admin
+docker exec -it memorize_mongodb mongo -u lertumpai -p --authenticationDatabase admin
 mongo -u lertumpai -p --authenticationDatabase admin
 ```
 
