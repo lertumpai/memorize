@@ -80,3 +80,7 @@ https://cert-manager.io/docs/installation/kubernetes/
 ```
 
 ## 5. apply k8s
+```
+run script index.js to generate memorize.yaml
+kubectl apply -f memorize.yaml
+```
