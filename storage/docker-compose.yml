@@ -3,7 +3,7 @@ services:
   mongo:
     image: mongo
     restart: always
-    container_name: memorize_mongodb_test
+    container_name: memorize_mongodb
     command: [--auth]
     ports:
       - 27017:27017
