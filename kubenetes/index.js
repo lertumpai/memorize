@@ -31,9 +31,9 @@ let wrapFile = files.map(file => {
 }).join('\n---\n')
 
 Object
-  .entries(env)
-  .forEach(([key, value]) => {
-    wrapFile = wrapFile.replaceAll('${' + key + '}', value)
-  })
+    .entries(env)
+    .forEach(([key, value]) => {
+      wrapFile = wrapFile.replace(new RegExp('{' + key + '}', 'g'), value)
+    })
 
 fs.writeFileSync('memorize.yaml', wrapFile)

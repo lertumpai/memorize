@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: memorize-upload
-  namespace: ${MEMORIZE_NAMESPACE}
+  namespace: {MEMORIZE_NAMESPACE}
   labels:
     app: memorize-upload
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: memorize-upload
-          image: asia.gcr.io/${MEMORIZE_GCP_PROJECT_ID}/memorize-upload:${MEMORIZE_DOCKER_TAG}
+          image: asia.gcr.io/{MEMORIZE_GCP_PROJECT_ID}/memorize-upload:{MEMORIZE_DOCKER_TAG}
           volumeMounts:
               - name: memorize-key-json
                 mountPath: /gsa
@@ -36,7 +36,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: memorize-upload-service
-  namespace: ${MEMORIZE_NAMESPACE}
+  namespace: {MEMORIZE_NAMESPACE}
 spec:
   type: ClusterIP
   selector:

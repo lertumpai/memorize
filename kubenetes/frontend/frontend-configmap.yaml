@@ -2,11 +2,11 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: memorize-frontend-configmap
-  namespace: ${MEMORIZE_NAMESPACE}
+  namespace: {MEMORIZE_NAMESPACE}
 data:
-  NODE_ENV: ${MEMORIZE_NODE_ENV}
-  SERVER_URL: ${MEMORIZE_SERVER_URL}
-  SERVER_UPLOAD_URL: ${MEMORIZE_SERVER_UPLOAD_URL}
+  NODE_ENV: {MEMORIZE_NODE_ENV}
+  SERVER_URL: {MEMORIZE_SERVER_URL}
+  SERVER_UPLOAD_URL: {MEMORIZE_SERVER_UPLOAD_URL}
   SERVER_URL_PATH: /backend/graphql
   LOCAL_STORAGE_KEY: current_user
   SERVER_UPLOAD_IMAGE_PATH: /upload/upload

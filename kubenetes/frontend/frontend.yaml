@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: memorize-frontend
-  namespace: ${MEMORIZE_NAMESPACE}
+  namespace: {MEMORIZE_NAMESPACE}
   labels:
     app: memorize-frontend
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: memorize-frontend
-          image: asia.gcr.io/${MEMORIZE_GCP_PROJECT_ID}/memorize-frontend:${MEMORIZE_DOCKER_TAG}
+          image: asia.gcr.io/{MEMORIZE_GCP_PROJECT_ID}/memorize-frontend:{MEMORIZE_DOCKER_TAG}
           envFrom:
             - configMapRef:
                 name: memorize-frontend-configmap
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: memorize-frontend-service
-  namespace: ${MEMORIZE_NAMESPACE}
+  namespace: {MEMORIZE_NAMESPACE}
 spec:
   type: ClusterIP
   selector:

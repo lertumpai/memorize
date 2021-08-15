@@ -6,16 +6,16 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
-    cert-manager.io/cluster-issuer: ${MEMORIZE_LET_ENCRYPT}
+    cert-manager.io/cluster-issuer: {MEMORIZE_LET_ENCRYPT}
   name: nginx
-  namespace: ${MEMORIZE_NAMESPACE}
+  namespace: {MEMORIZE_NAMESPACE}
 spec:
   tls:
     - hosts:
-        - ${MEMORIZE_HOST}
-      secretName: ${MEMORIZE_SECRET_NAME}
+        - {MEMORIZE_HOST}
+      secretName: {MEMORIZE_SECRET_NAME}
   rules:
-    - host: ${MEMORIZE_HOST}
+    - host: {MEMORIZE_HOST}
       http:
         paths:
           - path: /backend/(.*)

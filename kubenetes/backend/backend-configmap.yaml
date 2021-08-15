@@ -2,12 +2,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: memorize-backend-configmap
-  namespace: ${MEMORIZE_NAMESPACE}
+  namespace: {MEMORIZE_NAMESPACE}
 data:
-  NODE_ENV: ${MEMORIZE_NODE_ENV}
+  NODE_ENV: {MEMORIZE_NODE_ENV}
   PRIVATE_KEY: n@e#w$f%a^r&m*m(e)m_o+r1i2z3e4567890
   PRIVATE_HASH_KEY: $2b$10$OCSYVJ2HwOQ5iDA/U7ZjreK3OEdUzoCclByN0MPOkxy9UwPrJSW8m
-  MONGO_URI: ${MEMORIZE_MONGO_URI}
+  MONGO_URI: {MEMORIZE_MONGO_URI}
   REDIS_HOST: memorize-redis-service
   REDIS_PORT: "6379"
   BUCKET_NAME: memorize-bucket
