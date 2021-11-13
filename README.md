@@ -78,6 +78,7 @@ https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
 ```
 https://cert-manager.io/docs/installation/
 https://cert-manager.io/docs/installation/helm/
+https://cert-manager.io/docs/installation/kubectl/
 ```
 
 ## 5. apply k8s
